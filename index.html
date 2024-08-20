@@ -9,6 +9,45 @@
     <meta name="keywords" content="weather, forecast"/>
     <meta name="robots" content="index, follow"/>
     <title>Weather forecast</title>
+
+    <style>
+        body{
+            height: 97vh;
+            width: 98vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: azure;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .center-box{
+            display: block;
+            background-color: rgb(196, 223, 255);
+            padding: 1em;
+        }
+        .table{
+            display: flex;
+            flex-direction: column;
+            min-width: 300px;
+        }
+        .table-head{
+            width: 100%;
+            font-weight: bold;
+        }
+        .table-head td{
+            padding: 0.5em;
+            width: 50%;
+        }
+        .table-body{
+            display: flex;
+            flex-direction: column;
+        }
+        .table-data{
+            font-size: 1.3em;
+            padding: 0.3em;
+            padding-right: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
