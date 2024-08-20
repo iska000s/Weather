@@ -15,17 +15,17 @@
             height: 97vh;
             width: 98vw;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
             background-color: azure;
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
         .center-box{
-            display: block;
-            background-color: rgb(196, 223, 255);
-            padding: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .table{
+            background-color: rgb(196, 223, 255);
             display: flex;
             flex-direction: column;
             min-width: 300px;
@@ -47,11 +47,14 @@
             padding: 0.3em;
             padding-right: 20px;
         }
+        .table-row:hover{
+            background-color: rgb(182, 207, 237);
+        }
     </style>
 </head>
 <body>
     <header>
-
+        <h1>Prognoza pogody</h1>
     </header>
 
     <main>
@@ -66,31 +69,31 @@
                 <tbody class="table-body" id="table-body">
                     <tr class="table-row" id="tablerow">
                         <td class="table-data table-data-title" id="table-data">Temperatura:</td>
-                        <td class="table-data table-data-value" id="table-data"></td>
+                        <td class="table-data table-data-value" id="table-data temp"></td>
                     </tr>
                     <tr class="table-row" id="tablerow">
                         <td class="table-data table-data-title" id="table-data">Wilgotność:</td>
-                        <td class="table-data table-data-value" id="table-data"></td>
+                        <td class="table-data table-data-value" id="table-data humidity"></td>
                     </tr>
                     <tr class="table-row" id="tablerow">
                         <td class="table-data table-data-title" id="table-data">Ciśnienie:</td>
-                        <td class="table-data table-data-value" id="table-data"></td>
+                        <td class="table-data table-data-value" id="table-data pressure"></td>
                     </tr>
                     <tr class="table-row" id="tablerow">
                         <td class="table-data table-data-title" id="table-data">Zachmurzenie</td>
-                        <td class="table-data table-data-value" id="table-data"></td>
+                        <td class="table-data table-data-value" id="table-data clauds-perc"></td>
                     </tr>
                     <tr class="table-row" id="tablerow">
                         <td class="table-data table-data-title" id="table-data">Szybkość wiatru:</td>
-                        <td class="table-data table-data-value" id="table-data"></td>
+                        <td class="table-data table-data-value" id="table-data winds-speed"></td>
                     </tr>
                     <tr class="table-row" id="tablerow">
                         <td class="table-data table-data-title" id="table-data">Wschód słońca:</td>
-                        <td class="table-data table-data-value" id="table-data"></td>
+                        <td class="table-data table-data-value" id="table-data sun-rise"></td>
                     </tr>
                     <tr class="table-row" id="tablerow">
                         <td class="table-data table-data-title" id="table-data">Zachód słońca:</td>
-                        <td class="table-data table-data-value" id="table-data"></td>
+                        <td class="table-data table-data-value" id="table-data sun-set"></td>
                     </tr>
 
                 </tbody>
@@ -101,11 +104,11 @@
 
 
 
-
-
     <footer>
 
     </footer>
+
+    <script type="module" src="app.js"></script>
 </body>
 </html>
 
