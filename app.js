@@ -1,5 +1,9 @@
-function test () {
-    console.log("Prognoza");
-}
+import getWeather from "./get_weather_data.js"
 
-test();
+function startApp () {
+// console.log("test")
+// getWeather();
+// getLocation();
+};
+
+startApp();
