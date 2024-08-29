@@ -28,22 +28,23 @@ let getWeather = function (){
                 
                 function updateWeather (data) {
                 console.log(data);
-                let temp = data.main.temp;
-                let humidity = data.main.humidity;
-                let pressure = data.main.pressure;
-                let cloudsPerc = data.clouds.all;
-                let windSpeed = data.wind.speed;
-                let sunRise = data.sys.sunrise;
-                let sunSet = data.sys.sunset;
-                console.log(cloudsPerc, sunRise, sunSet);
+                const temp = data.main.temp;
+                const humidity = data.main.humidity;
+                const pressure = data.main.pressure;
+                const cloudsPerc = data.clouds.all;
+                const windSpeed = data.wind.speed;
+                const sunRise = new Date(data.sys.sunrise *1000);
+                const sunSet = new Date(data.sys.sunset *1000);
+                console.log("Temp: " + temp, "Humidity: " + humidity, "Pressure: " + pressure, "Clouds Perc.: " + cloudsPerc, "Wind speed: " + windSpeed, "Sun rise: " + sunRise, "Sun set: " + sunSet);
 
-                document.querySelector(".temp").innerHTML = temp + " &#176C";
-                document.querySelector(".humidity").innerHTML = humidity + "%";
-                document.querySelector(".pressure").innerHTML = pressure + " hPa";
-                document.querySelector(".clouds-perc").innerHTML = cloudsPerc;
-                document.querySelector(".wind-speed").innerHTML = windSpeed + "m/s";
-                document.querySelector(".sun-rise").innerHTML = sunRise;
-                document.querySelector(".sun-set").innerHTML = sunSet;
+                document.getElementById("temp").innerHTML = temp;
+                // document.querySelector(".temp").innerHTML = temp + " &#176C";
+                document.getElementById("humidity").innerHTML = humidity + "%";
+                document.getElementById("pressure").innerHTML = pressure + " hPa";
+                document.getElementById("clouds-perc").innerHTML = cloudsPerc;
+                document.getElementById("wind-speed").innerHTML = windSpeed + "m/s";
+                document.getElementById("sun-rise").innerHTML = sunRise.getHours() + ":" + sunRise.getMinutes();
+                document.getElementById("sun-set").innerHTML = sunSet.getHours() + ":" + sunRise.getMinutes();
             }
             getWeatherData();
         });
