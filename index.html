@@ -54,6 +54,16 @@
             padding: 0.3em;
             padding-right: 20px;
         }
+        #location-link-box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #location-link{
+            color: black;
+            text-decoration: none;
+            font-size: 30px;
+        }
         .table-row:hover{
             background-color: rgb(182, 207, 237);
         }
@@ -70,9 +80,11 @@
             <table class="table">
                 <thead class="table-head">
                     <td class="table-data" id="table-data">
-                        <img src="" alt="" class="icon-weather">
+                        <img src="" alt="" class="icon-weather" id="icon-weather">
                     </td>
-                    <td class="table-data" id="table-data">Warszawa</td>
+                    <td class="table-data" id="location-link-box">
+                        <a href="#" id="location-link"></a>
+                    </td>
                 </thead>
                 <tbody class="table-body" id="table-body">
                     <tr class="table-row" id="tablerow">

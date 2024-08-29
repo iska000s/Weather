@@ -35,6 +35,7 @@ let getWeather = function (){
                 const windSpeed = data.wind.speed;
                 const sunRise = new Date(data.sys.sunrise *1000);
                 const sunSet = new Date(data.sys.sunset *1000);
+                const locationName = data.name;
                 console.log("Temp: " + temp, "Humidity: " + humidity, "Pressure: " + pressure, "Clouds Perc.: " + cloudsPerc, "Wind speed: " + windSpeed, "Sun rise: " + sunRise, "Sun set: " + sunSet);
 
                 document.getElementById("temp").innerHTML = temp;
@@ -45,6 +46,13 @@ let getWeather = function (){
                 document.getElementById("wind-speed").innerHTML = windSpeed + "m/s";
                 document.getElementById("sun-rise").innerHTML = sunRise.getHours() + ":" + sunRise.getMinutes();
                 document.getElementById("sun-set").innerHTML = sunSet.getHours() + ":" + sunRise.getMinutes();
+                
+                let imgUrl = "https://openweathermap.org/img/wn/"+data.weather[0].icon+"@2x.png";
+                document.getElementById("icon-weather").setAttribute("src", imgUrl);
+
+                const locationLink = document.getElementById("location-link");
+                locationLink.innerHTML = locationName;
+                locationLink.href = `https://openstreetmap.org/#map=2/${lat}/${long}`;
             }
             getWeatherData();
         });
